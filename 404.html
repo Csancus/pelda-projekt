@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 – Az oldal nem található | Dr. Vásárhelyi Anna</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .error-page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 3rem 1.75rem; background: var(--cream); }
+    .error-page__code { font-family: var(--font-head); font-size: clamp(6rem, 20vw, 12rem); font-weight: 700; line-height: 1; color: var(--sage-light); margin-bottom: 0; }
+    .error-page__leaf { font-size: 2.5rem; margin: 1rem 0; display: block; }
+    .error-page__title { font-family: var(--font-head); font-size: clamp(1.4rem, 4vw, 2rem); color: var(--text); margin-bottom: 1rem; }
+    .error-page__text { font-size: 1rem; color: var(--text-soft); max-width: 420px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .error-page__links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  </style>
+</head>
+<body>
+<div class="error-page">
+  <p class="error-page__code">404</p>
+  <span class="error-page__leaf">🌿</span>
+  <h1 class="error-page__title">Ez az oldal nem található</h1>
+  <p class="error-page__text">A keresett oldal elköltözött, átneveztük, vagy soha nem is létezett. De a segítség – az megtalálható.</p>
+  <div class="error-page__links">
+    <a href="./" class="btn btn--primary">← Vissza a főoldalra</a>
+    <a href="./#kapcsolat" class="btn btn--outline">Kapcsolatfelvétel</a>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

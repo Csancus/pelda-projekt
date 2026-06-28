@@ -447,3 +447,11 @@ p + p { margin-top: .8rem; }
 .post__cta h2 { font-size: 1.6rem; margin-bottom: .75rem; }
 .post__cta p { margin-bottom: 1.5rem; }
 @media (max-width: 640px) { .post-wrap { padding: 5rem 1.25rem 4rem; } .post__cta { padding: 2rem 1.25rem; } }
+
+/* Active nav link */
+.nav__active { color: var(--sage-deep) !important; font-weight: 600; }
+
+/* Custom form validation */
+.field--error { border-color: #C0392B !important; background: #FDF3F2 !important; }
+.field-error-msg { margin-top: .35rem; font-size: .78rem; color: #C0392B; display: flex; align-items: center; gap: .3rem; }
+.field-error-msg::before { content: '!'; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; background: #C0392B; color: #fff; font-size: .65rem; font-weight: 700; flex-shrink: 0; }

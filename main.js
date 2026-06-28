@@ -140,14 +140,53 @@ if (nextBtn) {
   updateBtn();
 }
 
+// Custom form validation helpers
+function showFieldError(field, msg) {
+  field.classList.add('field--error');
+  let el = field.parentElement.querySelector('.field-error-msg');
+  if (!el) { el = document.createElement('p'); el.className = 'field-error-msg'; field.parentElement.appendChild(el); }
+  el.textContent = msg;
+}
+function clearFieldError(field) {
+  field.classList.remove('field--error');
+  const el = field.parentElement.querySelector('.field-error-msg');
+  if (el) el.remove();
+}
+function validateForm(form) {
+  const isHR = window.location.pathname.includes('/hr');
+  const m = isHR
+    ? { req: 'Ovo polje je obavezno.', email: 'Unesite ispravnu email adresu.', gdpr: 'Prihvaćanje pravila privatnosti je obavezno.' }
+    : { req: 'Ez a mező kötelező.', email: 'Kérjük, adjon meg érvényes email-címet.', gdpr: 'Az adatkezelési nyilatkozat elfogadása kötelező.' };
+  let ok = true;
+  form.querySelectorAll('[required]').forEach(f => {
+    clearFieldError(f);
+    if (f.type === 'checkbox') { if (!f.checked) { showFieldError(f, m.gdpr); ok = false; } }
+    else if (f.type === 'email') {
+      if (!f.value.trim()) { showFieldError(f, m.req); ok = false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value)) { showFieldError(f, m.email); ok = false; }
+    } else { if (!f.value.trim()) { showFieldError(f, m.req); ok = false; } }
+  });
+  return ok;
+}
+
 // Contact form — AJAX submit, inline thank-you
 const form = document.getElementById('contactForm');
 if (form) {
+  form.querySelectorAll('[required]').forEach(f => {
+    f.addEventListener('input', () => clearFieldError(f));
+    f.addEventListener('change', () => clearFieldError(f));
+  });
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!validateForm(form)) {
+      const first = form.querySelector('.field--error');
+      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
     const btn = form.querySelector('button[type="submit"]');
     const orig = btn.textContent;
-    btn.textContent = 'Küldés…';
+    const isHR = window.location.pathname.includes('/hr');
+    btn.textContent = isHR ? 'Šaljem…' : 'Küldés…';
     btn.disabled = true;
     try {
       const fd = new FormData(form);
@@ -157,7 +196,7 @@ if (form) {
         document.getElementById('formThanks').style.display = 'block';
       } else { throw new Error(); }
     } catch {
-      btn.textContent = 'Hiba – írj emailben!';
+      btn.textContent = isHR ? 'Greška – pošalji email!' : 'Hiba – írj emailben!';
       btn.style.background = '#c0392b';
       setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; }, 4000);
     }
