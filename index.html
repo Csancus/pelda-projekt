@@ -7,9 +7,9 @@
   <meta name="description" content="Pszichológus Budapest – Dr. Vásárhelyi Anna klinikai pszichológus és pszichoterapeuta. KVT, EMDR, egyéni terápia, párterápia, traumafeldolgozás, szorongáskezelés.">
   <meta name="keywords" content="pszichológus Budapest, pszichoterapeuta Budapest, Dr. Vásárhelyi Anna, KVT terápia, EMDR, egyéni terápia, párterápia, szorongás kezelés, traumafeldolgozás">
   <meta name="author" content="Dr. Vásárhelyi Anna">
-  <link rel="canonical" href="https://vasarhelyi-pszichologus.hu/">
+  <link rel="canonical" href="https://csancus.github.io/pelda-projekt/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vasarhelyi-pszichologus.hu/">
+  <meta property="og:url" content="https://csancus.github.io/pelda-projekt/">
   <meta property="og:title" content="Dr. Vásárhelyi Anna – Pszichológus, Pszichoterapeuta | Budapest">
   <meta property="og:description" content="Klinikai pszichológus és pszichoterapeuta Budapesten. KVT, EMDR, egyéni- és párterápia. 12+ év tapasztalat, 80+ Google értékelés.">
   <meta property="og:locale" content="hu_HU">
@@ -42,9 +42,9 @@
     "@type": "HealthAndBeautyBusiness",
     "name": "Dr. Vásárhelyi Anna – Pszichológus, Pszichoterapeuta",
     "description": "Klinikai pszichológus és pszichoterapeuta Budapesten. KVT, EMDR, egyéni- és párterápia.",
-    "url": "https://vasarhelyi-pszichologus.hu",
+    "url": "https://csancus.github.io/pelda-projekt",
     "telephone": "+36705551234",
-    "email": "anna@vasarhelyi-pszichologus.hu",
+    "email": "vasarhelyi.anna@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Váci utca 8., 2. emelet",
@@ -61,6 +61,9 @@
     "priceRange": "15 000–20 000 Ft"
   }
   </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preload" as="image" href="images/hero-bg.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -78,16 +81,29 @@
       </span>
       Dr. Vásárhelyi Anna
     </a>
+    <a href="tel:+36705551234" class="nav__phone-mobile">📞 +36 70 555 1234</a>
     <button class="nav__toggle" id="navToggle" aria-label="Menü"><span></span><span></span><span></span></button>
     <nav class="nav__menu" id="navMenu">
-      <a href="#bemutatkozas" data-i18n="nav.about">Bemutatkozás</a>
-      <a href="#modszerek" data-i18n="nav.methods">Módszerek</a>
-      <a href="#velemenyek" data-i18n="nav.reviews">Vélemények</a>
-      <a href="#gyik" data-i18n="nav.faq">GYIK</a>
-      <a href="#kapcsolat" class="nav__cta nav__cta--mobile-only" data-i18n="nav.cta">Időpontfoglalás</a>
+      <a href="#bemutatkozas">Bemutatkozás</a>
+      <div class="nav__item--dropdown">
+        <button class="nav__dropdown-btn" id="navDropdownBtn" aria-haspopup="true" aria-expanded="false">Módszerek</button>
+        <div class="nav__dropdown" id="navDropdown" role="menu">
+          <a href="#modszerek" role="menuitem">Egyéni Pszichoterápia</a>
+          <a href="#modszerek" role="menuitem">Párterápia</a>
+          <a href="#modszerek" role="menuitem">Kognitív Viselkedésterápia (KVT)</a>
+          <a href="#modszerek" role="menuitem">Traumafeldolgozás</a>
+          <a href="#modszerek" role="menuitem">Szorongás &amp; Stresszkezelés</a>
+          <a href="#modszerek" role="menuitem">Önismeret &amp; Fejlesztés</a>
+        </div>
+      </div>
+      <a href="#arak">Árak</a>
+      <a href="#velemenyek">Vélemények</a>
+      <a href="#gyik">GYIK</a>
+      <a href="#kapcsolat" class="nav__cta nav__cta--mobile-only">Időpontfoglalás</a>
     </nav>
     <div class="nav__actions">
-      <a href="#kapcsolat" class="nav__cta" data-i18n="nav.cta">Időpontfoglalás</a>
+      <a href="#kapcsolat" class="nav__cta">Időpontfoglalás</a>
+      <a href="tel:+36705551234" class="nav__cta nav__phone-cta">📞 +36 70 555 1234</a>
       <div class="lang-switcher">
         <button class="lang-btn active" data-lang="hu">HU</button>
         <span class="lang-sep">|</span>
@@ -248,7 +264,7 @@
 </section>
 
 <!-- PHOTO STRIP 1 -->
-<div class="photo-strip" style="background: linear-gradient(135deg,#2a4060 0%,#3a5f80 50%,#2a4060 100%);">
+<div class="photo-strip" style="background-image:url('images/erdo-napfeny.jpg')" role="img" aria-label="Napfényes őszi erdő">
   <div class="photo-strip__fade photo-strip__fade--top" style="background:linear-gradient(to bottom,#fff 0%,transparent 100%)"></div>
   <div class="photo-strip__fade photo-strip__fade--bottom" style="background:linear-gradient(to top,#F3EDE3 0%,transparent 100%)"></div>
 </div>
@@ -361,9 +377,9 @@
 </section>
 
 <!-- PHOTO STRIP 2 -->
-<div class="photo-strip" style="background: linear-gradient(135deg,#1e3048 0%,#2d4a68 50%,#1e3048 100%);">
+<div class="photo-strip" style="background-image:url('images/buza-mezo.jpg')" role="img" aria-label="Aranyszínű búzamező">
   <div class="photo-strip__fade photo-strip__fade--top" style="background:linear-gradient(to bottom,#F3EDE3 0%,transparent 100%)"></div>
-  <div class="photo-strip__fade photo-strip__fade--bottom" style="background:linear-gradient(to top,#E4EEF5 0%,transparent 100%)"></div>
+  <div class="photo-strip__fade photo-strip__fade--bottom" style="background:linear-gradient(to top,#F5EAE5 0%,transparent 100%)"></div>
 </div>
 
 <!-- MIBEN SEGÍTHET -->
@@ -425,6 +441,37 @@
     </div>
     <div class="segitseg__cta">
       <a href="#kapcsolat" class="btn btn--rose" data-i18n="help.btn">Segítséget kérek →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ÁRAK -->
+<section class="section arak" id="arak" style="background:var(--cream-mid)">
+  <div class="container">
+    <div class="section__head">
+      <p class="section__tag">Árak</p>
+      <h2>Díjszabás</h2>
+      <p class="section__lead">Átlátható árazás, rejtett díjak nélkül.</p>
+    </div>
+    <div class="services-grid" style="max-width:680px;margin:0 auto 2rem">
+      <div class="service-card" style="text-align:center">
+        <div class="service-card__icon" style="font-size:2.5rem;margin-bottom:.75rem">🧠</div>
+        <h3>Egyéni Pszichoterápia</h3>
+        <span class="service-card__sub">50–60 perces ülés</span>
+        <p style="font-size:2rem;font-family:var(--font-head);color:var(--sage-deep);margin:.75rem 0 .25rem;font-weight:700">15 000 Ft</p>
+        <p style="font-size:.82rem">/ alkalom</p>
+      </div>
+      <div class="service-card" style="text-align:center">
+        <div class="service-card__icon" style="font-size:2.5rem;margin-bottom:.75rem">💑</div>
+        <h3>Párterápia</h3>
+        <span class="service-card__sub">60–80 perces ülés</span>
+        <p style="font-size:2rem;font-family:var(--font-head);color:var(--sage-deep);margin:.75rem 0 .25rem;font-weight:700">20 000 Ft</p>
+        <p style="font-size:.82rem">/ alkalom</p>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.88rem;color:var(--text-soft)">Az első alkalomra érdemes 90 percet tervezni (részletes felmérés). &nbsp;·&nbsp; Online konzultáció szintén elérhető.</p>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="#kapcsolat" class="btn btn--primary">Időpontot foglalok →</a>
     </div>
   </div>
 </section>
@@ -593,7 +640,7 @@
             <div class="contact-item__icon">✉️</div>
             <div>
               <strong data-i18n="contact.email.label">Email</strong>
-              <p><a href="mailto:anna@vasarhelyi-pszichologus.hu">anna@vasarhelyi-pszichologus.hu</a></p>
+              <p><a href="mailto:vasarhelyi.anna@gmail.com">vasarhelyi.anna@gmail.com</a></p>
             </div>
           </div>
         </div>
@@ -660,7 +707,7 @@
         </div>
         <p data-i18n="footer.addr">1052 Budapest, Váci utca 8., 2. emelet</p>
         <p><a href="tel:+36705551234" style="color:rgba(255,255,255,.55)">+36 70 555 1234</a></p>
-        <p><a href="mailto:anna@vasarhelyi-pszichologus.hu" style="color:rgba(255,255,255,.55)">anna@vasarhelyi-pszichologus.hu</a></p>
+        <p><a href="mailto:vasarhelyi.anna@gmail.com" style="color:rgba(255,255,255,.55)">vasarhelyi.anna@gmail.com</a></p>
       </div>
       <div class="footer__links">
         <span class="footer__col-title" data-i18n="footer.pages">Oldalak</span>
@@ -683,7 +730,7 @@
       <div class="footer__contact">
         <span class="footer__col-title">Kontakt</span>
         <a href="tel:+36705551234">+36 70 555 1234</a>
-        <a href="mailto:anna@vasarhelyi-pszichologus.hu">anna@vasarhelyi-pszichologus.hu</a>
+        <a href="mailto:vasarhelyi.anna@gmail.com">vasarhelyi.anna@gmail.com</a>
         <a href="#kapcsolat" data-i18n="nav.cta">Időpontfoglalás</a>
       </div>
     </div>
